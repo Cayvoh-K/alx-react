@@ -5,8 +5,8 @@ let count = 0;
 
 function updateCounter() {
     count++;
-    $('#count').text(`${count} clicks on the button`);
-}
+    $('#count').html(`${count} clicks on the button`);
+};
 
 $(document).ready(function() {
     $('body').append('<p>Holberton Dashboard</p>');
