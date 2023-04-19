@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [
           'style-loader',
           'css-loader',
@@ -21,10 +21,12 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
+          "file loader",
           {
-            loader: 'url-loader',
+            loader: 'image-webpack-loader',
             options: {
-              limit: 8192
+              bypassOnDebug: true,
+              disable: true,
              },
             },
           ],
