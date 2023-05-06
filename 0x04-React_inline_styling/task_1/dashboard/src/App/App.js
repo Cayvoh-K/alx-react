@@ -76,10 +76,10 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   App: {
-   height: "100vh",
-   maxwidth: "100vw",
-   position: "relative",
-   fontFamily: "Arial, Helvetica, sans-serif", 
+    height: "100vh",
+    maxWidth: "100vw",
+    position: "relative",
+    fontFamily: "Arial, Helvetica, sans-serif",
   },
 });
 
