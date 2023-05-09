@@ -101,12 +101,12 @@ it("Has default state for displayDrawer false", () => {
 });
 
 it("displayDrawer changes to true when calling handleDisplayDrawer", () => {
-  const wrapper = sha;;ow(<App />);
+  const wrapper = shallow(<App />);
   expect(wrapper.state().displayDrawer).toEqual(false);
-  
+
   const instance = wrapper.instance();
 
-  instance.handlDisplayDrawer();
+  instance.handleDisplayDrawer();
 
   expect(wrapper.state().displayDrawer).toEqual(true);
 });
@@ -117,9 +117,9 @@ it("displayDrawer changes to false when calling handleHideDrawer", () => {
 
   // const instance = wrapper.instance();
 
-  wrapper.instance().handlDisplayDrawer();
+  wrapper.instance().handleDisplayDrawer();
 
-  expect(wrapper.state().handleHideDrawer).toEqual(true);
+  expect(wrapper.state().displayDrawer).toEqual(true);
 
   wrapper.instance().handleHideDrawer();
 

@@ -23,11 +23,12 @@ class Notifications extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="menuItem">
-          <p>Your notifications</p>
-        </div>
-        {this.props.displayDrawer ? (
-          <div className="Notifications">
+        {!this.props.displayDrawer ? (
+          <div className={css(styles.menuItem)} onClick={this.props.handleDisplayDrawer}>
+            <p>Your notifications</p>
+          </div>
+        ) : (
+          <div className={css(styles.Notifications)}>
             <button
               style={{
                 color: "#3a3a3a",
@@ -44,6 +45,7 @@ class Notifications extends Component {
               aria-label="Close"
               onClick={(e) => {
                 console.log("Close button has been clicked");
+                this.props.handleHideDrawer();
               }}
             >
               <img src={closeIcon} alt="close icon" width="10px" />
@@ -56,7 +58,7 @@ class Notifications extends Component {
               })}
             </ul>
           </div>
-        ) : null}
+        )}
       </React.Fragment>
     );
   }
@@ -81,16 +83,15 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: "1.8em",
     right: "0",
-
-    "@media (max-width: 375px": {
-      display: "block",
-      height: "100vh",
-      width: "100vw",
-      marginLeft: "auto",
-      marginRight: "auto",
+    zIndex: "100",
+    "@media (max-width: 900px)": {
+      width: "100%",
+      padding: "0px",
+      fontSize: 20,
+      position: "relative",
+      right: 0,
+      left: 0,
       border: "none",
-      fontSize: "20px",
-      padding: "0",
     },
   },
 
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
   },
-  
+
   menuItem: {
     position: "relative",
     zIndex: 100,
@@ -117,21 +118,25 @@ const styles = StyleSheet.create({
     },
   },
   button: {
-  "@media (max-width: 900px)": {
-    position: "relative",
-    float: "right",
-},
-},
+    "@media (max-width: 900px)": {
+      position: "relative",
+      float: "right",
+    },
+  },
 });
 
 Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape),
+  handleDisplayDrawer: PropTypes.func,
+  handleHideDrawer: PropTypes.func,
 };
 
 Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: [],
+  handleDisplayDrawer: () => {},
+  handleHideDrawer: () => {},
 };
 
 export default Notifications;

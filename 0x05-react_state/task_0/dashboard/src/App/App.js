@@ -62,11 +62,11 @@ class App extends React.Component {
       <React.Fragment>
         <div className={css(styles.App)}>
           <div className="heading-section">
-            <Notifications 
-            listNotifications={this.listNotifications} 
-            displayDrawer={this.state.displayDrawer}
-            handleDisplayDrawer={this.handleDisplayDrawer}
-            handleHideDrawer={this.handleHideDrawer}
+            <Notifications
+              listNotifications={this.listNotifications}
+              displayDrawer={this.state.displayDrawer}
+              handleDisplayDrawer={this.handleDisplayDrawer}
+              handleHideDrawer={this.handleHideDrawer}
             />
             <Header />
           </div>
@@ -94,10 +94,10 @@ class App extends React.Component {
 
 const styles = StyleSheet.create({
   App: {
-   height: "100vh",
-   maxwidth: "100vw",
-   position: "relative",
-   fontFamily: "Arial, Helvetica, sans-serif", 
+    height: "100vh",
+    maxWidth: "100vw",
+    position: "relative",
+    fontFamily: "Arial, Helvetica, sans-serif",
   },
 });
 
