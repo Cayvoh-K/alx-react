@@ -1,4 +1,4 @@
-import { List, Map } from "immutable";
+import { Seq} from "immutable";
 
 export default function printBestStudents(grades) {
     const filteredGrades = Seq(grades)
